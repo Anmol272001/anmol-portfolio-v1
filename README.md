@@ -1,76 +1,88 @@
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
-</h2>
+<h1 align="center">
+Anmol Varshney - Personal Portfolio
+
+
+
+
+<a href="https://www.google.com/search?q=https://anmol-portfolio-v1.vercel.app/" target="_blank">anmol-portfolio.vercel.app</a>
+</h1>
+
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
+<!-- Yeh ek placeholder image hai, aap isko baad mein apne project ke screenshot se badal sakte ho -->
+<img alt="Demo" src="https://www.google.com/search?q=https://placehold.co/1200x600/1e3a8a/ffffff%3Ftext%3DAnmol%2BVarshney%2BPortfolio" />
 </div>
 
-<br/>
+<div align="center">
 
-<center>
-
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
-
-</center>
+</div>
 
 <h3 align="center">
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
+🔹
+<a href="https://www.google.com/search?q=https://github.com/Anmol272001/anmol-portfolio-v1/issues">Report Bug</a> &nbsp; &nbsp;
+🔹
+<a href="https://www.google.com/search?q=https://github.com/Anmol272001/anmol-portfolio-v1/issues">Request Feature</a>
 </h3>
 
-## TL;DR
+TL;DR
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+Feel free to fork this repo to build your own portfolio. If you find it useful, a star ⭐ would be appreciated!
 
-## Built With
+Built With
 
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+My personal portfolio, built from scratch to showcase my skills in frontend development and my journey pivoting from a data role.
 
-This project was built using these technologies.
+This project was built using these technologies:
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+React.js: For building the user interface with components.
 
-## Features
+React Hooks: Using useState and useEffect for state management and side effects.
 
-**📖 Multi-Page Layout**
+Tailwind CSS: For modern, responsive utility-first styling.
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+JavaScript (ES6+): For all application logic.
 
-**📱 Fully Responsive**
+HTML5 & CSS3: For structure and fundamental styling.
 
-## Getting Started
+VS Code: My code editor of choice.
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+Vercel: For deployment and hosting.
 
-## 🛠 Installation and Setup Instructions
+Features
 
-1. Installation: `npm install`
+📖 Single-Page Application
 
-2. In the project directory, you can run: `npm start`
+🎨 Styled with Tailwind CSS for a clean, modern, and utility-first design.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+📱 Fully Responsive (Mobile, Tablet, and Desktop).
+
+✨ Dynamic Typewriter Effect (using useState and a useEffect cleanup function).
+
+📡 Simulated API Call (using useEffect to fetch project data with a "Loading" state).
+
+Getting Started
+
+Clone down this repository. You will need node.js and git installed globally on your machine.
+
+🛠 Installation and Setup Instructions
+
+Installation: npm install
+
+In the project directory, you can run: npm start
+
+Runs the app in the development mode.
+
+Open http://localhost:3000 to view it in the browser.
 The page will reload if you make edits.
 
-## Usage Instructions
+Usage Instructions
 
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+Open the project folder and navigate to src/App.jsx. 
 
-### Show your support
+
+
+
+This file contains all the components used. You can edit the mockProjects array to add your own projects and update the text in the components directly.
+
+Show your support
 
 Give a ⭐ if you like this website!
-
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>

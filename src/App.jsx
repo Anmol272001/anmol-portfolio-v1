@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
 /*
-This is your complete, professional portfolio website in one file.
-It includes two key "interview talking points":
-1. ProjectSection: Simulating an API call with useState/useEffect.
-2. Hero Section: A typewriter effect using useState/useEffect with a cleanup function.
+YEH AAPKA FINAL, PROFESSIONAL PORTFOLIO CODE HAI.
+Isko `src/App.jsx` file mein save karna hai.
+
+Ismein 2 main "Interview Talking Points" hain:
+1. ProjectSection: API call ko simulate karna (useState/useEffect).
+2. Hero Section: Typewriter effect (useState/useEffect + cleanup function).
 */
 
 // --- MOCK DATA ---
-// This is your "Mock API" data. In a real project, this would come from a server.
+// Yeh aapka "Mock API" data hai. Interviewer ko batana ki yeh data server se aata hai.
 const mockProjects = [
   {
     id: 1,
     title: 'Sadhna Tracker (React & Firebase)',
     desc: 'A full-stack habit tracking app using Firebase auth and Firestore database for real-time data.',
     img: 'https://placehold.co/600x400/1e3a8a/ffffff?text=Sadhna+Tracker',
-    link: '#' // TODO: Add your GitHub project link here
+    link: '#' // TODO: Yahan apne project ka GitHub link daalna
   },
   {
     id: 2,
     title: 'Task Management App (Vanilla JS)',
     desc: 'A simple To-Do app built with core JavaScript (DOM manipulation) and localStorage persistence.',
     img: 'https://placehold.co/600x400/1e3a8a/ffffff?text=Task+App',
-    link: '#' // TODO: Add your GitHub project link here
+    link: '#' // TODO: Yahan apne project ka GitHub link daalna
   },
   {
     id: 3,
@@ -33,8 +35,7 @@ const mockProjects = [
   }
 ];
 
-// --- SVG Icons (for Skills) ---
-// We define these as components to keep the HTML clean
+// --- SVG Icons (Skills ke liye) ---
 const ReactIcon = () => (
   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M11.29 1.71a1 1 0 00-1.41 0l-7 7a1 1 0 000 1.41l7 7a1 1 0 001.41-1.41L6.41 11H17a1 1 0 100-2H6.41l4.88-4.88a1 1 0 000-1.41zM10 4.41L8.71 3.12a1 1 0 00-1.42 0l-7 7a1 1 0 000 1.41l7 7a1 1 0 001.42 0L10 15.59V4.41z" clipRule="evenodd"></path><path d="M10.18 17.12a1 1 0 001.41 0l7-7a1 1 0 000-1.41l-7-7a1 1 0 00-1.41 1.41L15.07 9H4a1 1 0 100 2h11.07l-4.88 4.88a1 1 0 000 1.41z"></path></svg>
 );
@@ -55,7 +56,7 @@ const LinkedInIcon = () => (
 );
 
 
-// --- Components ---
+// --- Components (Chhote code ke tukde) ---
 
 // 1. Header/Navigation
 function Header() {
@@ -63,19 +64,22 @@ function Header() {
     <nav className="bg-white/90 backdrop-blur-md shadow-sm w-full fixed top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Yahan aapka naam hai */}
           <span className="text-2xl font-bold text-gray-900">Anmol Varshney</span>
           <div className="flex items-center space-x-6">
             <a href="#about" className="hidden sm:block text-gray-700 hover:text-blue-600 font-medium">About</a>
             <a href="#projects" className="hidden sm:block text-gray-700 hover:text-blue-600 font-medium">Projects</a>
             <a href="#contact" className="hidden sm:block text-gray-700 hover:text-blue-600 font-medium">Contact</a>
             <span className="w-px h-6 bg-gray-300 hidden sm:block"></span>
+            {/* Yahan aapka LinkedIn link daalna */}
             <a href="https://www.linkedin.com/in/anmol-v-4b9719118" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-700">
               <LinkedInIcon />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900">
-               {/* TODO: Add your GitHub link here */}
+            {/* Yahan aapka GitHub link daalna (Anmol272001) */}
+            <a href="https://github.com/Anmol272001" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900">
               <GitIcon />
             </a>
+            {/* Yahan aapka email hai */}
             <a 
               href="mailto:anmol.varshney27@gmail.com" 
               className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition duration-300"
@@ -89,46 +93,45 @@ function Header() {
   );
 }
 
-// 2. Hero Section (with Typewriter Effect)
+// 2. Hero Section (Typewriter Effect ke saath)
 function Hero() {
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
+  // Yeh text type hoga
   const rolesToRotate = ["Frontend Developer", "React Developer", "Problem Solver"];
 
   // --- INTERVIEW TALKING POINT #2: Typewriter Effect ---
   useEffect(() => {
+    // Yeh function type/delete karega
     const handleType = () => {
       const i = loopNum % rolesToRotate.length;
       const fullText = rolesToRotate[i];
 
-      // Check if deleting or typing
+      // Type kar rahe hain ya delete?
       setText(isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1));
 
-      // Set typing speed
+      // Speed set karna
       setTypingSpeed(isDeleting ? 75 : 150);
 
-      // Check if word is complete
+      // Jab poora shabd type ho jaaye
       if (!isDeleting && text === fullText) {
-        // Pause at end of word
-        setTimeout(() => setIsDeleting(true), 2000);
+        setTimeout(() => setIsDeleting(true), 2000); // 2 sec ruko, phir delete
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
-        setLoopNum(loopNum + 1);
+        setLoopNum(loopNum + 1); // Agla shabd
       }
     };
 
-    // This is the timer for the typing effect
+    // Timer jo type karega
     const timer = setTimeout(handleType, typingSpeed);
 
-    // This is the *CLEANUP FUNCTION*
-    // It runs when the component unmounts or before the effect re-runs
-    // This prevents memory leaks by clearing the old timer
+    // YEH SABSE IMPORTANT HAI: CLEANUP FUNCTION
+    // Yeh memory leak rokta hai. Interviewer ko yeh zaroor batana.
     return () => clearTimeout(timer);
 
-  // This effect depends on 'text', 'isDeleting', and 'typingSpeed'
   }, [text, isDeleting, typingSpeed, loopNum, rolesToRotate]); 
   // --- END TALKING POINT #2 ---
 
@@ -136,11 +139,11 @@ function Hero() {
   return (
     <section className="bg-gray-50 pt-32 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
+        {/* Yahan aapka naam hai */}
         <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
           Hi, I'm Anmol Varshney
         </h1>
         <p className="mt-6 text-2xl md:text-3xl font-medium text-blue-700 h-10">
-          {/* The `&nbsp;` keeps the height consistent */}
           <span className="border-r-2 border-blue-700 pr-1">{text}</span>&nbsp;
         </p>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
@@ -151,7 +154,7 @@ function Hero() {
   );
 }
 
-// 3. About Section (with Skills)
+// 3. About Section (Aapki "Pivot Story")
 function About() {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -173,6 +176,7 @@ function About() {
           </div>
         </div>
         
+        {/* Yahan aapki skills hain */}
         <div className="mt-16">
           <h3 className="text-3xl font-bold text-center text-gray-900">Core Technologies</h3>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
@@ -203,7 +207,7 @@ function About() {
   );
 }
 
-// 4. Project Card (Single Project)
+// 4. Project Card (Ek single project kaisa dikhega)
 function ProjectCard({ project }) {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
@@ -229,34 +233,35 @@ function ProjectCard({ project }) {
   );
 }
 
-// 5. Projects Section (Interview Talking Point #1)
+// 5. Projects Section (Yeh hai aapka Interview Talking Point #1)
 function ProjectSection() {
   
   // --- INTERVIEW TALKING POINT #1: API Simulation ---
 
-  // 1. useState: We'll keep the list of projects in 'state'.
-  // It starts as an empty array.
+  // 1. useState: Hum projects ki list ko 'state' mein rakhenge.
+  // Shuru mein, yeh ek empty array (khaali list) hai.
   const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // Loading state
 
-  // 2. useEffect: This function runs *once* when the component loads.
-  // This is perfect for making an "API call".
+  // 2. useEffect: Yeh function component ke load hote hi *ek baar* chalega.
+  // Yeh "API call" karne ke liye perfect hai.
   useEffect(() => {
-    // We're using `setTimeout` to create a 1-second 'fake network delay'.
-    // This is perfect to show in an interview to explain how API calls work.
+    // Hum `setTimeout` ka use karke ek 1-second ka 'fake network delay' daal rahe hain
+    // Yeh interview mein dikhane ke liye perfect hai ki API call kaise kaam karti hai.
     const fetchProjects = () => {
       console.log("Fetching projects...");
       setTimeout(() => {
-        // After 1 second, we set the 'mockProjects' (our fake data) into the state.
+        // 1 second baad, hum 'mockProjects' (hamara fake data) ko state mein set karte hain.
         setProjects(mockProjects);
-        setIsLoading(false);
+        setIsLoading(false); // Loading khatam
         console.log("Projects loaded!");
       }, 1000); // 1000ms = 1 second
     };
 
     fetchProjects();
     
-    // `[]` (empty dependency array) means "run this effect only once on mount".
+    // `[]` (empty dependency array) ka matlab hai yeh effect sirf ek baar chalao.
+    // YEH ZAROOR BATANA.
   }, []); 
 
   // --- INTERVIEW TALKING POINT ENDS HERE ---
@@ -269,12 +274,12 @@ function ProjectSection() {
           Projects I've built to showcase my skills in React, JavaScript, and data handling.
         </p>
 
-        {/* Show loading state or projects */}
+        {/* Yahan hum 'isLoading' state check kar rahe hain */}
         {isLoading ? (
           <div className="text-center text-xl text-gray-600 font-medium">Loading Projects...</div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* We run .map() on the 'projects' state to create a card for each project */}
+            {/* Jab loading false hai, tab hum 'projects' state par .map() chalaate hain */}
             {projects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -308,7 +313,7 @@ function Contact() {
 
 
 // --- Main App Component ---
-// This combines all components together
+// Yeh sab components ko ek saath jodta hai
 export default function App() {
   return (
     <div className="font-sans text-gray-800 antialiased">
