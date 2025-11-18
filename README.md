@@ -4,19 +4,24 @@ Anmol Varshney - Personal Portfolio
 
 
 
-<a href="https://www.google.com/search?q=https://anmol-portfolio-v1.vercel.app/" target="_blank">anmol-portfolio.vercel.app</a>
+<a href="https://anmol-portfolio-v1.vercel.app/" target="_blank">anmol-portfolio-v1.vercel.app</a>
 </h1>
 
 <div align="center">
-<!-- Yeh ek placeholder image hai, aap isko baad mein apne project ke screenshot se badal sakte ho -->
-<img alt="Demo" src="https://www.google.com/search?q=https://placehold.co/1200x600/1e3a8a/ffffff%3Ftext%3DAnmol%2BVarshney%2BPortfolio" />
+<!-- YEH AAPKE LOCAL SCREENSHOT KO DIKHAYEGA -->
+<img alt="Demo" src="./portfolio-screenshot.png" />
 </div>
 
 <div align="center">
+
+
+
+<!-- YEH BADGES AAPKE GITHUB REPO SE LINKED HAIN -->
 
 </div>
 
 <h3 align="center">
+<!-- YEH LINKS BHI AAPKE GITHUB REPO SE LINKED HAIN -->
 🔹
 <a href="https://www.google.com/search?q=https://github.com/Anmol272001/anmol-portfolio-v1/issues">Report Bug</a> &nbsp; &nbsp;
 🔹
@@ -65,14 +70,22 @@ Clone down this repository. You will need node.js and git installed globally on 
 
 🛠 Installation and Setup Instructions
 
-Installation: npm install
+Clone the repo:
 
-In the project directory, you can run: npm start
+git clone [https://github.com/Anmol272001/anmol-portfolio-v1.git](https://github.com/Anmol272001/anmol-portfolio-v1.git)
 
-Runs the app in the development mode.
+
+Install NPM packages:
+
+npm install
+
+
+Run the app in development mode:
+
+npm start
+
 
 Open http://localhost:3000 to view it in the browser.
-The page will reload if you make edits.
 
 Usage Instructions
 
